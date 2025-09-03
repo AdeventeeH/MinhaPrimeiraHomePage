@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  background: #fff;
+  padding: 24px 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  width: min(560px, 92vw);
+}
+
+h1 { color: #222; margin: 0 0 4px; }
+h2 { color: #555; margin: 0 0 12px; font-weight: 500; }
+
+.cursos h3 { margin: 12px 0 8px; color: #333; }
+.cursos ul {padding-left: 20px; text-align: center; margin: 1px auto 20px; display: flex; flex-direction: column; align-items: center; }
+.cursos li { color: #555; margin:4px 0; }
+
+.botoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 8px 0 16px;
+}
+
+.botao {
+  position: relative;
+  padding: 14px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background: #3498db;
+  color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background .3s;
+}
+
+/* O texto normal do botão */
+.botao span {
+  display: inline-block;
+  transition: opacity .4s ease-in-out;
+}
+
+/* O texto "Em Breve" que aparece */
+.botao::after {
+  content: "Em Breve";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity .4s ease-in-out;
+  pointer-events: none;
+}
+
+/* Quando o mouse passa */
+.botao:hover {
+  background: #2980b9;
+}
+
+.botao:hover span {
+  opacity: 0; /* some suavemente */
+}
+
+.botao:hover::after {
+  opacity: 1; /* aparece suavemente */
+}
